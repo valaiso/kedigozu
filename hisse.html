@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hisse · Kedi Gözü</title>
+  <link rel="icon" href="logo-64.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stil.css?v=2dfdf033d7">
+</head>
+<body>
+  <header class="ust">
+    <a href="/" class="logo"><img src="logo-64.png" alt="" class="logo-resim">Kedi <span>Gözü</span></a>
+    <a href="/" class="soluk">← Takip listesi</a>
+    <a href="takvim.html" class="menu">Takvim</a>
+    <a href="gostergeler.html" class="menu">Göstergeler</a>
+    <a href="sirala.html" class="menu">Sıralama</a>
+    <a href="dogruluk.html" class="menu">Doğruluk</a>
+    <a href="hesap.html" class="menu">Hesap</a>
+    <span class="bosluk"></span>
+  </header>
+
+  <main>
+    <div class="baslik-satiri">
+      <h1 id="baslik">…</h1>
+      <span id="ad" class="soluk"></span>
+      <span id="fiyat" class="fiyat"></span>
+      <span id="degisim"></span>
+      <span id="grup" class="soluk kucuk"></span>
+    </div>
+    <div id="rozet-satiri" style="margin:-8px 0 12px"></div>
+    <div id="veri-uyari" hidden></div>
+    <div class="sekme-satiri">
+      <nav class="bolum-nav sekme-cubugu" id="bolum-nav" role="tablist">
+        <a href="#grafik" data-sekme="grafik" role="tab">Grafik</a>
+        <a href="#sinyal" data-sekme="sinyal" role="tab">Sinyal</a>
+        <a href="#konsey" data-sekme="konsey" role="tab">Konsey</a>
+        <a href="#durustluk" data-sekme="durustluk" role="tab">Dürüstlük</a>
+        <a href="#basari" data-sekme="basari" role="tab">Başarı</a>
+        <a href="#seviyeler" data-sekme="seviyeler" role="tab">Seviyeler</a>
+        <a href="#deger" data-sekme="deger" role="tab">Değerleme</a>
+        <a href="#haber" data-sekme="haber" role="tab">Haberler</a>
+        <a href="#mali" data-sekme="mali" role="tab">Mali tablolar</a>
+      </nav>
+      <div class="arac-cubugu zd-secici" style="margin:0" title="Grafik, sinyal, konsey ve başarı bu zaman dilimine göre">
+        <button data-zd="4h" class="secili">4 saatlik</button>
+        <button data-zd="1d">Günlük</button>
+      </div>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="grafik" role="tabpanel">
+    <div class="arac-cubugu">
+      <label title="TradingView sinyalinin AL ya da SAT'a döndüğü barlar"><input type="checkbox" id="oklar" checked> AL/SAT okları</label>
+      <label title="Kedi Gözü puanının AL ya da SAT'a döndüğü barlar: yeşil Kedi G. AL, kırmızı Kedi G. SAT"><input type="checkbox" id="kedi-isaret" checked> <span class="arti">Kedi G.</span> işaretleri</label>
+      <label title="Etkisi olan KAP bildirimleri (K) ve haberler (H); yeşil olumlu, kırmızı olumsuz"><input type="checkbox" id="haber-isaret" checked> Haber işaretleri</label>
+      <label title="Fiyata en yakın 3 destek (D) ve 3 direnç (R); sayı güç puanı"><input type="checkbox" id="seviye-isaret" checked> Destek/direnç</label>
+      <label>Pivot <select id="pivot-secim"><option value="">yok</option><option value="pivot_gunluk">günlük</option><option value="pivot_haftalik">haftalık</option></select></label>
+      <label>Alt panel <select id="alt-panel"><option value="tv">TradingView puanı</option><option value="kedi">Kedi Gözü puanı</option><option value="uyarlanmis">Uyarlanmış puan</option></select></label>
+      <span class="soluk kucuk" id="bar-bilgi"></span>
+    </div>
+    <div id="grafik"></div>
+    <p class="not">Alt panel: seçilen puan (−1 … +1; uyarlanmışta gri bar "güven düşük"). "AL" / "SAT" okları TradingView sinyalinin,
+      "Kedi G. AL" (yeşil) / "Kedi G. SAT" (kırmızı) okları Kedi Gözü puanının AL ya da SAT'a döndüğü barları gösterir. Sarı kareler senin işaretlerin.</p>
+
+    <section id="geri-bolum" data-renk="pembe">
+      <div class="bolum-baslik">
+        <h2>Geri bildirim: grafikte işaretle</h2>
+        <span class="ekle">
+          <select id="etiket-turu"><option value="dip">Gerçek dip</option><option value="tepe">Gerçek tepe</option>
+            <option value="yanlis_al">Yanlış AL</option><option value="yanlis_sat">Yanlış SAT</option></select>
+          <input id="etiket-not" placeholder="Not (isteğe bağlı)" maxlength="300" style="width:180px">
+          <button id="isaretle">Grafikte işaretle</button>
+        </span>
+      </div>
+      <p class="not" id="etiket-mesaj">İşaretler ağırlıkları doğrudan değiştirmez: hangi göstergenin o olayı erken yakaladığını ölçmek
+        için etiket olarak kullanılır (Göstergeler sayfası).</p>
+      <div id="etiket-listesi"></div>
+    </section>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="sinyal" role="tabpanel">
+    <section id="olasilik-bolum" data-renk="vurgu" hidden>
+      <h2>Bu AL'ın başarı olasılığı</h2>
+      <div id="olasilik"></div>
+    </section>
+    <section id="baglam-bolum" data-renk="vurgu" hidden>
+      <h2>Bağlam ve risk</h2>
+      <div id="baglam"></div>
+    </section>
+    <section id="sira-bolum" data-renk="vurgu" hidden>
+      <h2>XU100 içindeki sırası</h2>
+      <div id="sira"></div>
+    </section>
+    <div class="yerlesim">
+      <section class="kart derece-kart" id="derece-4h" data-renk="turkuaz"></section>
+      <section class="kart derece-kart" id="derece-1d" data-renk="turkuaz"></section>
+    </div>
+    <div class="yerlesim">
+      <section class="kart derece-kart" id="uyarlanmis-4h" data-renk="vurgu"></section>
+      <section class="kart derece-kart" id="uyarlanmis-1d" data-renk="vurgu"></section>
+    </div>
+
+    <section id="gosterge-bolum" data-renk="turkuaz" style="margin-top:16px">
+      <h2 id="tablo-baslik">Göstergeler</h2>
+      <div class="tablo-kutu">
+        <table>
+          <thead><tr><th>Gösterge</th><th>Grup</th><th class="sag">Değer</th><th>Oy</th></tr></thead>
+          <tbody id="gostergeler"></tbody>
+        </table>
+      </div>
+      <p class="not">
+        Hareketli ortalamalarda fiyat ortalamanın üstündeyse AL, altındaysa SAT. Osilatörlerin kuralları TradingView'ın
+        Teknik Derecelendirme kurallarıyla aynıdır (ör. RSI 30'un altında ve yükseliyorsa AL). Genel puan iki grubun
+        ortalamasıdır: 0,5'in üstü GÜÇLÜ AL, 0,1'in üstü AL, −0,1 ile 0,1 arası TUT.
+      </p>
+    </section>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="konsey" role="tabpanel">
+    <section id="konsey-bolum" data-renk="mor">
+      <h2 id="konsey-baslik">Gösterge konseyi</h2>
+      <div id="konsey"><p class="soluk">Yükleniyor…</p></div>
+    </section>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="durustluk" role="tabpanel">
+    <section id="durustluk-bolum" data-renk="kehribar">
+      <h2>Dürüstlük: sinyaller bu hissede geçmişte doğru çıktı mı?</h2>
+      <div id="durustluk"><p class="soluk">Yükleniyor…</p></div>
+    </section>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="basari" role="tabpanel">
+    <section id="basari-bolum" data-renk="camgobegi">
+      <h2>Bu hissede gösterge başarısı</h2>
+      <div id="basari"><p class="soluk">Yükleniyor…</p></div>
+    </section>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="seviyeler" role="tabpanel">
+    <div class="yerlesim">
+      <section class="kart" id="seviyeler-bolum" data-renk="turkuaz" style="margin:0">
+        <h2>Destek ve direnç</h2>
+        <div id="seviyeler"><p class="soluk">Yükleniyor…</p></div>
+      </section>
+      <section class="kart" id="temettu-bolum" data-renk="yesil" style="margin:0">
+        <h2>Temettü</h2>
+        <div id="temettu"><p class="soluk">Yükleniyor…</p></div>
+      </section>
+    </div>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="deger" role="tabpanel">
+    <section id="deger-bolum" data-renk="altin">
+      <h2>Değerleme</h2>
+      <div id="deger"><p class="soluk">Yükleniyor…</p></div>
+    </section>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="haber" role="tabpanel">
+    <section id="haber-bolum" data-renk="pembe">
+      <h2>Haberler ve KAP</h2>
+      <div class="kartlar" id="haber-kartlar"><p class="soluk">Yükleniyor…</p></div>
+      <p class="kucuk" id="haber-isabet" hidden></p>
+      <p class="not" id="dil-modelsiz" hidden>* Geçici puan: bazı olaylar Gemini değerlendirmesini bekliyor; şimdilik
+        yalnızca kural tablosuyla puanlandı. Değerlendirme gelince puan kendiliğinden güncellenir.</p>
+      <h3>Puanı oluşturan en etkili olaylar</h3>
+      <div id="etkili-olaylar"></div>
+      <div class="bolum-baslik" style="margin-top:18px">
+        <h3 style="margin:0">Olaylar</h3>
+        <span><span class="soluk kucuk" id="olay-sayaci"></span> <button id="olay-filtre">Rutin ve elenenler dahil tümü</button></span>
+      </div>
+      <div class="tablo-kutu">
+        <table class="olay-tablosu">
+          <thead><tr><th>Zaman</th><th></th><th>Başlık ve gerekçe</th><th>Kaynak</th><th>Tür</th><th>Durum</th></tr></thead>
+          <tbody id="olaylar"></tbody>
+        </table>
+      </div>
+      <p class="not">Haber puanı = 50 + 50 × tanh(k × Σ katkı). Katkı = yön × büyüklük × kesinlik × kaynak güveni (KAP 1,
+        ajans 0,7, diğer 0,4) × zamanla sönüm (KAP 5, haber 2 iş günü yarı ömür). Aynı olayı veren haberler tek olay sayılır.</p>
+    </section>
+    <section id="kap-etki-bolum" data-renk="pembe" hidden>
+      <h2>KAP olaylarından sonra ne oldu?</h2>
+      <div id="kap-etki"></div>
+    </section>
+    </div>
+
+    <div class="sekme-icerik" data-sekme="mali" role="tabpanel">
+    <section id="bilanco-bolum" data-renk="gok" hidden>
+      <h2>Son bilanço beklentiden ne kadar farklı?</h2>
+      <div id="bilanco"></div>
+    </section>
+    <section id="mali-bolum" data-renk="gok" hidden>
+      <div class="bolum-baslik">
+        <h2>Mali tablolar</h2>
+        <div class="arac-cubugu" style="margin:0">
+          <button data-gorunum="nominal">Nominal</button>
+          <button data-gorunum="reel" title="Tutarlar son TÜFE ayının TL'sine taşınır; çeyrekler TMS 29 kuralıyla ayrıştırılır">Enflasyon düzeltmeli</button>
+        </div>
+      </div>
+      <div id="mali"><p class="soluk">Yükleniyor…</p></div>
+    </section>
+    </div>
+
+  </main>
+
+  <footer>Yalnızca kişisel kullanım içindir; yatırım tavsiyesi değildir. Grafik: TradingView Lightweight Charts™.</footer>
+
+  <script src="vendor/lightweight-charts.standalone.production.js?v=2dfdf033d7"></script>
+  <script src="yayin-bilgi.js?v=2dfdf033d7"></script>
+  <script src="yayin.js?v=2dfdf033d7"></script>
+  <script src="ortak.js?v=2dfdf033d7"></script>
+  <script src="mali.js?v=2dfdf033d7"></script>
+  <script src="haber.js?v=2dfdf033d7"></script>
+  <script src="deger.js?v=2dfdf033d7"></script>
+  <script src="seviye.js?v=2dfdf033d7"></script>
+  <script src="hisse.js?v=2dfdf033d7"></script>
+  <script src="analiz.js?v=2dfdf033d7"></script>
+  <script src="konsey.js?v=2dfdf033d7"></script>
+</body>
+</html>

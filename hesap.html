@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hesap · Kedi Gözü</title>
+  <link rel="icon" href="logo-64.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stil.css?v=2dfdf033d7">
+</head>
+<body>
+  <header class="ust">
+    <a href="/" class="logo"><img src="logo-64.png" alt="" class="logo-resim">Kedi <span>Gözü</span></a>
+    <a href="/" class="menu">Panel</a>
+    <a href="takvim.html" class="menu">Takvim</a>
+    <a href="gostergeler.html" class="menu">Göstergeler</a>
+    <a href="sirala.html" class="menu">Sıralama</a>
+    <a href="dogruluk.html" class="menu">Doğruluk</a>
+    <a href="hesap.html" class="menu secili">Hesap</a>
+    <span class="bosluk"></span>
+  </header>
+
+  <main class="hesap-renkli">
+    <section data-renk="yesil">
+      <div id="ozet"><p class="soluk">Yükleniyor…</p></div>
+    </section>
+
+    <section data-renk="gok" id="grafik-kutu" hidden>
+      <div class="bolum-baslik"><h2>Hesap değeri: ZBJ fonu, BIST 100, BIST 30 ve gölge hesaplarla kıyas</h2></div>
+      <div class="kart hesap-grafik-kart">
+        <div id="grafik-lejant" class="hesap-lejant"></div>
+        <div id="hesap-grafik" class="hesap-grafik"></div>
+      </div>
+      <div id="bekleyen"></div>
+      <p class="not">Kalın yeşil çizgi Kedi Gözü hesabı. Kesikli çizgiler: hesabın ilk emir saatinde aynı parayla endeks alınıp hiç
+        satılmasaydı. Noktalı mavi çizgi: para hiç hisseye girmeden ZBJ para piyasası fonunda (stopaj sonrası) bekleseydi. Değerler her günün kapanışında;
+        gün bitmediyse son fiyatla.</p>
+    </section>
+
+    <section data-renk="mor" id="golge-bolum" hidden>
+      <div class="bolum-baslik"><h2>Gölge hesaplar: ek kurallar canlıda işe yarıyor mu?</h2></div>
+      <div id="golgeler"></div>
+    </section>
+
+    <section data-renk="mor" id="golge-fark-bolum" hidden>
+      <div class="bolum-baslik"><h2>Hesaplar nasıl çalışır ve sınama sonuçları</h2></div>
+      <div id="golge-farklar"></div>
+    </section>
+    <section data-renk="turkuaz">
+      <div class="bolum-baslik"><h2>Eldeki hisseler</h2></div>
+      <div id="pozisyonlar"></div>
+    </section>
+
+    <section data-renk="kehribar">
+      <div class="bolum-baslik"><h2>İşlem geçmişi</h2></div>
+      <div id="islemler"></div>
+    </section>
+
+    <section data-renk="pembe">
+      <div class="bolum-baslik"><h2>Haber puanı sinyali: ileri ölçüm</h2></div>
+      <div id="haber-sinyali"></div>
+    </section>
+
+    <section data-renk="altin">
+      <div class="bolum-baslik"><h2>Faiz, altın ve piyasa durumu</h2></div>
+      <div id="piyasa-durumu"></div>
+    </section>
+
+
+    <section data-renk="gri">
+      <div class="bolum-baslik"><h2>Kurallar</h2></div>
+      <div id="kurallar"></div>
+    </section>
+  </main>
+
+  <footer>Kedi Gözü · kişisel analiz aracı · yatırım tavsiyesi değildir.</footer>
+  <script src="vendor/lightweight-charts.standalone.production.js?v=2dfdf033d7"></script>
+  <script src="yayin-bilgi.js?v=2dfdf033d7"></script>
+  <script src="yayin.js?v=2dfdf033d7"></script>
+  <script src="ortak.js?v=2dfdf033d7"></script>
+  <script src="hesap.js?v=2dfdf033d7"></script>
+</body>
+</html>

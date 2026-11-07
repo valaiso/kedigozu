@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kedi Gözü</title>
+  <link rel="icon" href="logo-64.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stil.css?v=2dfdf033d7">
+</head>
+<body>
+  <header class="ust">
+    <a href="/" class="logo"><img src="logo-64.png" alt="" class="logo-resim">Kedi <span>Gözü</span></a>
+    <a href="/" class="menu secili">Panel</a>
+    <a href="takvim.html" class="menu">Takvim</a>
+    <a href="gostergeler.html" class="menu">Göstergeler</a>
+    <a href="sirala.html" class="menu">Sıralama</a>
+    <a href="dogruluk.html" class="menu">Doğruluk</a>
+    <a href="hesap.html" class="menu">Hesap</a>
+    <span class="bosluk"></span>
+    <span id="zamanlayici" class="soluk kucuk"></span>
+    <button id="yenile" title="4 saatlik/günlük mumları ve sinyalleri şimdi güncelle">Fiyatları güncelle</button>
+  </header>
+
+  <main>
+    <section data-renk="camgobegi">
+      <h2>Piyasa</h2>
+      <div id="endeksler" class="kartlar"></div>
+    </section>
+
+    <section data-renk="kehribar">
+      <h2>Piyasa rüzgârı</h2>
+      <div class="gundem">
+        <div class="kart" id="ruzgar-karti"><p class="soluk">Yükleniyor…</p></div>
+        <div class="kart" id="ekonomist-karti"></div>
+      </div>
+      <div id="kural-kitabi"></div>
+    </section>
+
+    <section data-renk="pembe">
+      <div class="bolum-baslik">
+        <h2>Piyasa gündemi</h2>
+        <span id="gemini-durum" class="soluk kucuk"></span>
+      </div>
+      <div class="gundem">
+        <div class="kart" id="piyasa-puani"><p class="soluk">Yükleniyor…</p></div>
+        <div class="kart" id="sektor-puanlari"></div>
+      </div>
+      <div class="kart olay-listesi" id="piyasa-olaylari"></div>
+      <div id="kurum-tahminleri"></div>
+    </section>
+
+    <section data-renk="turkuaz">
+      <h2>Sektör endeksleri</h2>
+      <div class="tablo-kutu">
+        <table>
+          <thead>
+            <tr>
+              <th>Endeks</th><th class="sag">Değer</th><th class="sag">Günlük</th>
+              <th>4 saatlik</th><th>Günlük sinyal</th><th class="soluk">Son bar</th>
+            </tr>
+          </thead>
+          <tbody id="sektorler"><tr><td colspan="6" class="soluk">Yükleniyor…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section data-renk="vurgu">
+      <div class="bolum-baslik">
+        <h2>Takip listem</h2>
+        <form id="ekle-form" class="ekle" autocomplete="off">
+          <input id="ekle-kutu" list="evren-listesi" placeholder="XU100 hissesi ekle (ör. TUPRS)" maxlength="8">
+          <datalist id="evren-listesi"></datalist>
+          <button type="submit">Ekle</button>
+        </form>
+      </div>
+      <p id="ekle-mesaj" class="not"></p>
+      <div class="tablo-kutu">
+        <table>
+          <thead>
+            <tr>
+              <th>Hisse</th><th>Grup</th><th class="sag">Fiyat</th><th class="sag">Günlük</th>
+              <th>4 saatlik</th><th>Günlük sinyal</th>
+              <th title="Kedi Gözü uyarlanmış sinyali (4 saatlik / günlük); * güven düşük">Uyarlanmış</th>
+              <th title="Gösterge konseyi (4 saatlik / günlük): rozet Kedi Gözü puanı (bu hissede geçmişte en isabetli 5 göstergenin oyu), sayılar bütün göstergelerden kaçının AL / SAT dediği">Konsey</th>
+              <th class="sag" title="Fiyatın altındaki en yakın destek (D1) ve şimdiki fiyata uzaklığı; altında bir sonraki destek (D2). Üstüne gelince 3 destek ve güç puanları">Destek</th>
+              <th class="sag" title="Fiyatın üstündeki en yakın direnç (R1) ve şimdiki fiyata uzaklığı; altında bir sonraki direnç (R2). Üstüne gelince 3 direnç ve güç puanları">Direnç</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="liste"><tr><td colspan="11" class="soluk">Yükleniyor…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Sinyaller TradingView Teknik Derecelendirme yöntemiyle hesaplanır (15 hareketli ortalama + 11 osilatör).
+    Haber puanları KAP bildirimleri ve haberlerden kural tablosu ve Gemini ile üretilir; "*" işaretli puan geçicidir.
+    Fiyat verisi yaklaşık 15 dakika gecikmelidir. Yalnızca kişisel kullanım içindir; yatırım tavsiyesi değildir.
+  </footer>
+
+  <script src="yayin-bilgi.js?v=2dfdf033d7"></script>
+  <script src="yayin.js?v=2dfdf033d7"></script>
+  <script src="ortak.js?v=2dfdf033d7"></script>
+  <script src="gundem.js?v=2dfdf033d7"></script>
+  <script src="ruzgar.js?v=2dfdf033d7"></script>
+  <script src="ana.js?v=2dfdf033d7"></script>
+</body>
+</html>
