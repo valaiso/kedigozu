@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Göstergeler · Kedi Gözü</title>
+  <link rel="icon" href="logo-64.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stil.css?v=452189d5e5">
+</head>
+<body>
+  <header class="ust">
+    <a href="/" class="logo"><img src="logo-64.png" alt="" class="logo-resim">Kedi <span>Gözü</span></a>
+    <a href="/" class="menu">Panel</a>
+    <a href="takvim.html" class="menu">Takvim</a>
+    <a href="gostergeler.html" class="menu secili">Göstergeler</a>
+    <a href="sirala.html" class="menu">Sıralama</a>
+    <a href="dogruluk.html" class="menu">Doğruluk</a>
+    <a href="hesap.html" class="menu">Hesap</a>
+    <span class="bosluk"></span>
+  </header>
+
+  <main class="renkli-tema">
+    <section data-renk="mor">
+      <div class="bolum-baslik">
+        <h2>Göstergelerin karnesi (takip listesi + XU100/XU030)</h2>
+        <div class="arac-cubugu" style="margin:0">
+          <button data-kzd="4h" class="secili">4 saatlik</button><button data-kzd="1d">Günlük</button>
+        </div>
+      </div>
+      <h3>Kendini tartma: geçmişte en iyi 5 sonra da iyi mi?</h3>
+      <div id="secim-testleri"><p class="soluk">Yükleniyor…</p></div>
+      <h3>Göstergelerin bütün serilerdeki ortalama karnesi</h3>
+      <div id="karne-genel"></div>
+    </section>
+
+    <section data-renk="turkuaz">
+      <h2>Eklenti göstergeler</h2>
+      <div id="eklentiler"><p class="soluk">Yükleniyor…</p></div>
+      <p class="not">gostergeler/ klasörüne bırakılan .py dosyaları bir sonraki mum turunda otomatik kontrol edilir (biçim, boş değer,
+        geleceğe bakma) ve geçerse uyarlanmış sinyale ek oy olarak girer. Biçim ve Pine çevirisi: gostergeler/OKUBENI.md.</p>
+    </section>
+
+    <section data-renk="camgobegi">
+      <div class="bolum-baslik">
+        <h2>Gösterge başarısı (takip listesi + XU100/XU030 birlikte)</h2>
+        <div class="arac-cubugu" style="margin:0">
+          <button data-zd="4h" class="secili">4 saatlik</button><button data-zd="1d">Günlük</button>
+          <button data-donem="12ay" class="secili">Son 12 ay</button><button data-donem="3yil">Tüm geçmiş (5 yıl)</button>
+        </div>
+      </div>
+      <div id="basari"></div>
+    </section>
+
+    <section data-renk="altin">
+      <h2>Ağırlık önerisi</h2>
+      <div id="oneri"></div>
+    </section>
+
+    <section data-renk="kehribar">
+      <h2>Faiz kurallarının sınanması</h2>
+      <div id="faiz"></div>
+    </section>
+
+    <section data-renk="pembe">
+      <h2>Haber puanının sınanması</h2>
+      <div id="haber"></div>
+    </section>
+
+    <section data-renk="gri">
+      <h2>Geri bildirim analizi</h2>
+      <div id="geri"></div>
+    </section>
+  </main>
+
+  <footer>Yalnızca kişisel kullanım içindir; yatırım tavsiyesi değildir. Geçmişteki başarı gelecek için güvence değildir.</footer>
+
+  <script src="yayin-bilgi.js?v=452189d5e5"></script>
+  <script src="yayin.js?v=452189d5e5"></script>
+  <script src="ortak.js?v=452189d5e5"></script>
+  <script src="gostergeler.js?v=452189d5e5"></script>
+</body>
+</html>

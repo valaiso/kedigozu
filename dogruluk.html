@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doğruluk · Kedi Gözü</title>
+  <link rel="icon" href="logo-64.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stil.css?v=452189d5e5">
+</head>
+<body>
+  <header class="ust">
+    <a href="/" class="logo"><img src="logo-64.png" alt="" class="logo-resim">Kedi <span>Gözü</span></a>
+    <a href="/" class="menu">Panel</a>
+    <a href="takvim.html" class="menu">Takvim</a>
+    <a href="gostergeler.html" class="menu">Göstergeler</a>
+    <a href="sirala.html" class="menu">Sıralama</a>
+    <a href="dogruluk.html" class="menu secili">Doğruluk</a>
+    <a href="hesap.html" class="menu">Hesap</a>
+    <span class="bosluk"></span>
+  </header>
+
+  <main class="renkli-tema">
+    <section data-renk="camgobegi">
+      <div class="bolum-baslik">
+        <h2>Sistemin doğruluğu</h2>
+        <div class="arac-cubugu" style="margin:0">
+          <button id="kontrol-et" class="birincil" title="Bütün veriyi, göstergeleri, sinyalleri, değerlemeyi ve işleri şimdi denetle">Şimdi kontrol et</button>
+          <button id="ayrinti" title="Her denetimin bulduğu sorunları ve doğruladığı örnekleri aç">Ayrıntıları göster</button>
+        </div>
+      </div>
+      <p class="not ust-not">Fiyat verisi, 70 gösterge, karne, sinyaller, mali tablolar, değerleme, makro veriler, haber puanları ve
+        zamanlanmış işler denetlenir. Denetim her mum turunun sonunda (13:05, 17:05, 18:20) kendiliğinden çalışır. Bozuk fiyat
+        serisi bulunursa TradingView'dan baştan çekilir; düzelmezse geçersiz bar silinir.</p>
+      <div id="ozet" class="dogruluk-ozet"><p class="soluk">Yükleniyor…</p></div>
+      <div id="kontroller"></div>
+      <p class="not">Bu sayfa sistemin <b>doğru çalışıp çalışmadığını</b> denetler: veri bozuk mu, hesaplar tutarlı mı, her şey güncel
+        mi. Göstergelerin piyasayı ne kadar iyi tahmin ettiği ayrı bir sorudur; onun için <a href="gostergeler.html">Göstergeler</a>
+        sayfasındaki karneye bak.</p>
+    </section>
+    <section data-renk="gri">
+      <h2>Zamanlanmış işler</h2>
+      <div class="tablo-kutu">
+        <table>
+          <thead><tr><th>İş</th><th>Durum</th><th>Son çalışma</th><th>Ayrıntı</th></tr></thead>
+          <tbody id="isler"><tr><td colspan="4" class="soluk">Yükleniyor…</td></tr></tbody>
+        </table>
+      </div>
+      <p id="tv-ozet" class="not"></p>
+    </section>
+  </main>
+
+  <footer>Kedi Gözü · kişisel analiz aracı · yatırım tavsiyesi değildir.</footer>
+  <script src="yayin-bilgi.js?v=452189d5e5"></script>
+  <script src="yayin.js?v=452189d5e5"></script>
+  <script src="ortak.js?v=452189d5e5"></script>
+  <script src="dogruluk.js?v=452189d5e5"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Takvim · Kedi Gözü</title>
+  <link rel="icon" href="logo-64.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stil.css?v=452189d5e5">
+</head>
+<body>
+  <header class="ust">
+    <a href="/" class="logo"><img src="logo-64.png" alt="" class="logo-resim">Kedi <span>Gözü</span></a>
+    <a href="/" class="menu">Panel</a>
+    <a href="takvim.html" class="menu secili">Takvim</a>
+    <a href="gostergeler.html" class="menu">Göstergeler</a>
+    <a href="sirala.html" class="menu">Sıralama</a>
+    <a href="dogruluk.html" class="menu">Doğruluk</a>
+    <a href="hesap.html" class="menu">Hesap</a>
+    <span class="bosluk"></span>
+  </header>
+
+  <main class="renkli-tema">
+    <section data-renk="kehribar">
+      <div class="bolum-baslik">
+        <h2>Yaklaşan tarihler</h2>
+        <div class="arac-cubugu" style="margin:0">
+          <button data-gun="30">30 gün</button>
+          <button data-gun="120" class="secili">4 ay</button>
+          <button data-gun="366">1 yıl</button>
+        </div>
+      </div>
+      <div class="tablo-kutu">
+        <table class="olay-tablosu">
+          <thead><tr><th>Tarih</th><th class="sag">Kalan</th><th>Hisse</th><th>Tür</th><th>Olay</th><th>Ayrıntı</th></tr></thead>
+          <tbody id="olaylar"><tr><td colspan="6" class="soluk">Yükleniyor…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="not">
+        Bilanço: KAP Beklenen Bildirimler'deki yasal son gün (SPK II-14.1: ara dönem 30 gün, konsolide 40; yıllık 60, konsolide 70).
+        Son 7 gün kırmızıdır; rapor açıklanınca listeden düşer ve mali tablolar aynı haber turunda yenilenir.
+        Temettü: KAP kâr payı bildirimindeki hak kullanım tarihi (teklif edilen ya da genel kurulda kesinleşen).
+      </p>
+    </section>
+
+    <section data-renk="kehribar">
+      <h2>Takip listesi rozetleri</h2>
+      <div class="tablo-kutu">
+        <table>
+          <thead><tr><th>Hisse</th><th>Bilanço</th><th>Temettü</th><th>Tedbir</th></tr></thead>
+          <tbody id="rozetler"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>Yalnızca kişisel kullanım içindir; yatırım tavsiyesi değildir.</footer>
+
+  <script src="yayin-bilgi.js?v=452189d5e5"></script>
+  <script src="yayin.js?v=452189d5e5"></script>
+  <script src="ortak.js?v=452189d5e5"></script>
+  <script src="takvim.js?v=452189d5e5"></script>
+</body>
+</html>
