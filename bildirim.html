@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bildirim · Kedi Gözü</title>
+  <link rel="icon" href="logo-64.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stil.css?v=45eb36363d">
+</head>
+<body>
+  <header class="ust">
+    <a href="hesap.html" class="logo"><img src="logo-64.png" alt="" class="logo-resim">Kedi <span>Gözü</span></a>
+    <a href="hesap.html" class="menu">Hesap</a>
+    <a href="index.html" class="menu">Panel</a>
+    <a href="bildirim.html" class="menu secili">Bildirim</a>
+    <a href="takvim.html" class="menu">Takvim</a>
+    <a href="gostergeler.html" class="menu">Göstergeler</a>
+    <a href="sirala.html" class="menu">Sıralama</a>
+    <a href="dogruluk.html" class="menu">Doğruluk</a>
+    <span class="bosluk"></span>
+  </header>
+
+  <main class="renkli-tema bildirim-sayfa">
+    <section class="alarm-hero">
+      <div class="alarm-hero-ust">
+        <div>
+          <div class="alarm-ust-etiket"><span class="zil">🔔</span> Fiyat alarmı</div>
+          <h1>Fiyat gelince haber verelim</h1>
+          <p class="soluk">Koşul gerçekleşince Telegram'a <b>1 saat arayla iki ileti</b> gelir: hisse, değdiği fiyat, ±% değişim ve saat.</p>
+        </div>
+        <div class="alarm-sayaclar">
+          <div class="sayac"><b id="sayac-aktif">–</b><span>aktif</span></div>
+          <div class="sayac"><b id="sayac-bugun">–</b><span>bugün tetiklenen</span></div>
+        </div>
+      </div>
+
+      <form id="alarm-form" class="alarm-formu" autocomplete="off">
+        <div class="alan">
+          <label for="alarm-kod">Hisse</label>
+          <input id="alarm-kod" list="alarm-evren" placeholder="ör. THYAO" maxlength="8" required>
+          <datalist id="alarm-evren"></datalist>
+        </div>
+        <div class="alan">
+          <span class="alan-ad">Alarm türü</span>
+          <div class="secmeli" role="radiogroup" aria-label="Alarm türü">
+            <button type="button" role="radio" data-tur="hedef" class="secili" aria-checked="true">Fiyata gelince</button>
+            <button type="button" role="radio" data-tur="bant" aria-checked="false">± % yaklaşınca</button>
+          </div>
+        </div>
+        <div class="alan">
+          <label for="alarm-fiyat">Fiyat</label>
+          <div class="ekli-girdi"><input id="alarm-fiyat" inputmode="decimal" placeholder="320,50" required><span>TL</span></div>
+        </div>
+        <div class="alan alan-yuzde" hidden>
+          <label for="alarm-yuzde">Yakınlık</label>
+          <div class="ekli-girdi"><span>±</span><input id="alarm-yuzde" inputmode="decimal" placeholder="5"><span>%</span></div>
+        </div>
+        <button type="submit" class="ana-dugme">Alarm kur</button>
+      </form>
+      <div id="alarm-onizleme" class="alarm-onizleme" hidden></div>
+      <p id="alarm-mesaj" class="alarm-mesaj" role="status"></p>
+      <p class="not statik-not">Telefonda yalnız liste görünür; alarm kurmak ve silmek bilgisayardaki sitede.</p>
+    </section>
+
+    <section data-renk="turkuaz">
+      <h2>Aktif alarmlar <span id="aktif-sayi" class="takip-sayi"></span></h2>
+      <div id="aktif" class="alarm-izgara"><div class="alarm-bos">Yükleniyor…</div></div>
+      <p id="kontrol-notu" class="not"></p>
+    </section>
+
+    <section data-renk="gri">
+      <h2>Tetiklenenler</h2>
+      <div id="tetiklenen" class="alarm-cizelge"></div>
+    </section>
+  </main>
+
+  <footer>Yalnızca kişisel kullanım içindir; yatırım tavsiyesi değildir.</footer>
+
+  <script src="yayin-bilgi.js?v=45eb36363d"></script>
+  <script src="yayin.js?v=45eb36363d"></script>
+  <script src="ortak.js?v=45eb36363d"></script>
+  <script src="bildirim.js?v=45eb36363d"></script>
+</body>
+</html>
